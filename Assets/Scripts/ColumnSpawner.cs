@@ -14,6 +14,7 @@ public class ColumnSpawner : MonoBehaviour
     void Start()
     {
         rnd = Random.Range(2, 4);
+        lastTime = Time.time;
     }
 
     // Update is called once per frame
