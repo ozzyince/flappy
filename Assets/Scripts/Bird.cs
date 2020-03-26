@@ -7,6 +7,7 @@ public class Bird : MonoBehaviour
     [SerializeField] float speed = 2;
 
     Rigidbody2D body;
+    Score score;
 
     int maxAngle = 20;
     int minAngle = -90;
@@ -16,6 +17,7 @@ public class Bird : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        score = FindObjectOfType<Score>();
     }
 
     // Update is called once per frame
@@ -25,5 +27,11 @@ public class Bird : MonoBehaviour
             body.velocity = new Vector2(0, speed);
         angle = Mathf.Clamp(angle + (body.velocity.y > 0 ? 4 : body.velocity.y < -1.3f ? -3 : 0), minAngle, maxAngle);
         transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Column"))
+            score.Scored();
     }
 }
