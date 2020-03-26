@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject gameOverCanvas;
     [SerializeField] GameObject score;
+    [SerializeField] GameObject getReady;
 
 
     private void Awake()
@@ -47,5 +48,7 @@ public class GameManager : MonoBehaviour
     public void GameHasStarted()
     {
         gameHasStarted = true;
+        score.SetActive(true);
+        getReady.SetActive(false);
     }
 }

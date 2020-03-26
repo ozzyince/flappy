@@ -12,14 +12,15 @@ public class Score : MonoBehaviour
 
     [SerializeField] Text panelScore;
     [SerializeField] Text panelHighScore;
+    [SerializeField] GameObject newHigh;
 
     // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<Text>();
-        SetScore(0);
         highScore = PlayerPrefs.GetInt("highScore", 0);
         panelHighScore.text = highScore.ToString();
+        SetScore(0);
     }
 
     private void SetScore(int v)
@@ -32,6 +33,7 @@ public class Score : MonoBehaviour
             highScore = score;
             panelHighScore.text = highScore.ToString();
             PlayerPrefs.SetInt("highScore", highScore);
+            newHigh.SetActive(true);
         }
     }
 
