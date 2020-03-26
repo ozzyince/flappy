@@ -9,10 +9,12 @@ public class GameManager : MonoBehaviour
 
     public static bool gameOver;
     public static bool gameHasStarted;
+    public static bool gamePaused;
 
     [SerializeField] GameObject gameOverCanvas;
     [SerializeField] GameObject score;
     [SerializeField] GameObject getReady;
+    [SerializeField] GameObject pauseBtn;
 
 
     private void Awake()
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
     {
         gameOver = false;
         gameHasStarted = false;
+        gamePaused = false;
     }
 
     // Update is called once per frame
@@ -38,6 +41,7 @@ public class GameManager : MonoBehaviour
         gameOver = true;
         gameOverCanvas.SetActive(true);
         score.SetActive(false);
+        pauseBtn.SetActive(false);
     }
 
     public void OnOkBtnPressed()
@@ -50,5 +54,6 @@ public class GameManager : MonoBehaviour
         gameHasStarted = true;
         score.SetActive(true);
         getReady.SetActive(false);
+        pauseBtn.SetActive(true);
     }
 }

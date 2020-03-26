@@ -31,7 +31,7 @@ public class Bird : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !GameManager.gameOver)
+        if (Input.GetMouseButtonDown(0) && !GameManager.gameOver && Time.timeScale == 1)
         {
             body.gravityScale = 0.8f;
             gameManager.GameHasStarted();
