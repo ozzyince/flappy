@@ -8,9 +8,11 @@ public class GameManager : MonoBehaviour
     public static Vector2 bottomLeft;
 
     public static bool gameOver;
+    public static bool gameHasStarted;
 
     [SerializeField] GameObject gameOverCanvas;
     [SerializeField] GameObject score;
+
 
     private void Awake()
     {
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameOver = false;
+        gameHasStarted = false;
     }
 
     // Update is called once per frame
@@ -39,5 +42,10 @@ public class GameManager : MonoBehaviour
     public void OnOkBtnPressed()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void GameHasStarted()
+    {
+        gameHasStarted = true;
     }
 }

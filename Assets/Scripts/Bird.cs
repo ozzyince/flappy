@@ -23,6 +23,7 @@ public class Bird : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        body.gravityScale = 0;
         score = FindObjectOfType<Score>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -32,7 +33,11 @@ public class Bird : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && !GameManager.gameOver)
+        {
+            body.gravityScale = 0.8f;
+            gameManager.GameHasStarted();
             body.velocity = new Vector2(0, speed);
+        }
         if (!touchedGround)
         {
             angle = Mathf.Clamp(angle + (body.velocity.y > 0 ? 4 : body.velocity.y < -1.3f ? -3 : 0), minAngle, maxAngle);

@@ -13,14 +13,14 @@ public class ColumnSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rnd = Random.Range(2, 4);
+        rnd = 0;
         lastTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.gameOver) return;
+        if (GameManager.gameOver || !GameManager.gameHasStarted) return;
         if (Time.time - lastTime > rnd)
         {
             lastTime = Time.time;
