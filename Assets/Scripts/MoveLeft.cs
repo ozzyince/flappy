@@ -19,6 +19,7 @@ public class MoveLeft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.gameOver) return;
         transform.position = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);
         if (transform.position.x < -width)
             if (CompareTag("Ground"))

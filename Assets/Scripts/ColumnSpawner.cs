@@ -19,6 +19,7 @@ public class ColumnSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.gameOver) return;
         if (Time.time - lastTime > rnd)
         {
             lastTime = Time.time;
