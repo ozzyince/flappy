@@ -49,6 +49,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void OnMenuBtnPressed()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
     public void GameHasStarted()
     {
         gameHasStarted = true;
