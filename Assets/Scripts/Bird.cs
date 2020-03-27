@@ -7,6 +7,7 @@ public class Bird : MonoBehaviour
     [SerializeField] float speed = 2;
     [SerializeField] GameManager gameManager;
     [SerializeField] Sprite birdDied;
+    [SerializeField] Animator birdParent;
 
     Rigidbody2D body;
     Score score;
@@ -34,6 +35,7 @@ public class Bird : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !GameManager.gameOver && Time.timeScale == 1)
         {
             body.gravityScale = 0.8f;
+            birdParent.enabled = false;
             gameManager.GameHasStarted();
             body.velocity = new Vector2(0, speed);
             score = FindObjectOfType<Score>();
