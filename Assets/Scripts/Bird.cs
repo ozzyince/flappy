@@ -9,6 +9,7 @@ public class Bird : MonoBehaviour
     [SerializeField] Sprite birdDied;
     [SerializeField] Animator birdParent;
     [SerializeField] Animator getReady;
+    [SerializeField] Animator hitEffect;
 
     Rigidbody2D body;
     Score score;
@@ -51,10 +52,14 @@ public class Bird : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (GameManager.gameOver) return;
         if (collision.CompareTag("Column"))
             score.Scored();
         else if (collision.CompareTag("Pipe"))
+        {
+            hitEffect.SetTrigger("Hit");
             gameManager.GameOver();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -62,6 +67,7 @@ public class Bird : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
             if (!GameManager.gameOver)
             {
+                hitEffect.SetTrigger("Hit");
                 gameManager.GameOver();
                 GameOver();
             }
