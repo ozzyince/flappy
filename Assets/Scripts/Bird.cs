@@ -10,6 +10,7 @@ public class Bird : MonoBehaviour
     [SerializeField] Animator birdParent;
     [SerializeField] Animator getReady;
     [SerializeField] Animator hitEffect;
+    [SerializeField] Animator cameraAnim;
 
     Rigidbody2D body;
     Score score;
@@ -58,6 +59,7 @@ public class Bird : MonoBehaviour
         else if (collision.CompareTag("Pipe"))
         {
             hitEffect.SetTrigger("Hit");
+            cameraAnim.SetTrigger("Shake");
             gameManager.GameOver();
         }
     }
@@ -68,6 +70,7 @@ public class Bird : MonoBehaviour
             if (!GameManager.gameOver)
             {
                 hitEffect.SetTrigger("Hit");
+                cameraAnim.SetTrigger("Shake");
                 gameManager.GameOver();
                 GameOver();
             }
