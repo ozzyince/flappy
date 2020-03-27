@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField] Animator blackFade;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameManager.gameOver = false;
     }
 
     // Update is called once per frame
@@ -19,6 +21,7 @@ public class MenuManager : MonoBehaviour
 
     public void OnPlayBtnPressed()
     {
-        SceneManager.LoadScene("Game");
+        //SceneManager.LoadScene("Game");
+        blackFade.SetTrigger("FadeIn");
     }
 }

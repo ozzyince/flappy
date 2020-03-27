@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject score;
     [SerializeField] GameObject getReady;
     [SerializeField] GameObject pauseBtn;
-
+    [SerializeField] Animator blackFade;
 
     private void Awake()
     {
@@ -51,7 +51,8 @@ public class GameManager : MonoBehaviour
 
     public void OnMenuBtnPressed()
     {
-        SceneManager.LoadScene("Menu");
+        //SceneManager.LoadScene("Menu");
+        blackFade.SetTrigger("FadeIn");
     }
 
     public void GameHasStarted()

@@ -59,3 +59,6 @@ TagManager:
   - name: Canvas
     uniqueID: 618503599
     locked: 0
+  - name: Effects
+    uniqueID: 2185380353
+    locked: 0
