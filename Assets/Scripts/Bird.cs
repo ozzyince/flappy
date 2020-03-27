@@ -8,6 +8,7 @@ public class Bird : MonoBehaviour
     [SerializeField] GameManager gameManager;
     [SerializeField] Sprite birdDied;
     [SerializeField] Animator birdParent;
+    [SerializeField] Animator getReady;
 
     Rigidbody2D body;
     Score score;
@@ -36,9 +37,9 @@ public class Bird : MonoBehaviour
         {
             body.gravityScale = 0.8f;
             birdParent.enabled = false;
-            gameManager.GameHasStarted();
             body.velocity = new Vector2(0, speed);
             score = FindObjectOfType<Score>();
+            getReady.SetTrigger("FadeOut");
         }
         if (GameManager.gameHasStarted && !touchedGround)
         {
@@ -76,5 +77,10 @@ public class Bird : MonoBehaviour
         animator.enabled = false;
         spriteRenderer.sprite = birdDied;
         transform.rotation = Quaternion.Euler(0, 0, -90);
+    }
+
+    public void OnGetReadyAnimFinished()
+    {
+        gameManager.GameHasStarted();
     }
 }

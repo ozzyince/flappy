@@ -1251,6 +1251,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlackFade
       objectReference: {fileID: 0}
+    - target: {fileID: 6789333603191539713, guid: 5f7638edb00d8ed47b5299deea7b7f2f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6789333603191539727, guid: 5f7638edb00d8ed47b5299deea7b7f2f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1450,6 +1455,8 @@ GameObject:
   - component: {fileID: 1645507290}
   - component: {fileID: 1645507292}
   - component: {fileID: 1645507291}
+  - component: {fileID: 1645507293}
+  - component: {fileID: 1645507294}
   m_Layer: 5
   m_Name: GetReady
   m_TagString: Untagged
@@ -1514,6 +1521,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645507289}
   m_CullTransparentMesh: 0
+--- !u!95 &1645507293
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645507289}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c9cf92e086e675b4b8e89005e67ae1eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1645507294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645507289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247aba89a7bc4be41ad1d642abb4e0c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bird: {fileID: 7223614895076744416}
 --- !u!1 &1699145692
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,6 +2171,11 @@ PrefabInstance:
       propertyPath: birdParent
       value: 
       objectReference: {fileID: 1211232949}
+    - target: {fileID: 7223614897035993230, guid: 52d2531ea21250e4085447776ca88511,
+        type: 3}
+      propertyPath: getReady
+      value: 
+      objectReference: {fileID: 1645507293}
     - target: {fileID: 7223614897035993232, guid: 52d2531ea21250e4085447776ca88511,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2200,3 +2244,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7223614895076744414}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7223614895076744416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7223614897035993230, guid: 52d2531ea21250e4085447776ca88511,
+    type: 3}
+  m_PrefabInstance: {fileID: 7223614895076744414}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d658955c191154a93a2e01582c9a87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
