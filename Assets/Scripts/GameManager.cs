@@ -39,9 +39,14 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOver = true;
-        gameOverCanvas.SetActive(true);
         score.SetActive(false);
         pauseBtn.SetActive(false);
+        Invoke("ActivateGameOver", 1);
+    }
+
+    void ActivateGameOver()
+    {
+        gameOverCanvas.SetActive(true);
     }
 
     public void OnOkBtnPressed()
