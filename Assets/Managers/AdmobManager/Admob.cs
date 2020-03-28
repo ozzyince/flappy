@@ -59,7 +59,7 @@ public class Admob : MonoBehaviour
     private void RequestBanner()
     {
 #if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111"; //test
+        string adUnitId = "ca-app-pub-9232588622871176/6444673328"; //test
 #elif UNITY_IPHONE
             string adUnitId = "ca-app-pub-3940256099942544/2934735716";
 #else
