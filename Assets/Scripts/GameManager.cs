@@ -10,9 +10,10 @@ public class GameManager : MonoBehaviour
     public static bool gameOver;
     public static bool gameHasStarted;
     public static bool gamePaused;
+    public static int gameScore;
 
     [SerializeField] GameObject gameOverCanvas;
-    [SerializeField] GameObject score;
+    [SerializeField] Score score;
     [SerializeField] GameObject getReady;
     [SerializeField] GameObject pauseBtn;
     [SerializeField] Animator blackFade;
@@ -39,7 +40,8 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOver = true;
-        score.SetActive(false);
+        gameScore = score.score;
+        score.gameObject.SetActive(false);
         pauseBtn.SetActive(false);
         Invoke("ActivateGameOver", 1);
     }
@@ -63,7 +65,7 @@ public class GameManager : MonoBehaviour
     public void GameHasStarted()
     {
         gameHasStarted = true;
-        score.SetActive(true);
+        score.gameObject.SetActive(true);
         getReady.SetActive(false);
         pauseBtn.SetActive(true);
     }

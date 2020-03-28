@@ -286,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e363f81a2baaf774dbe8da07d096d207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   panelScore: {fileID: 261165941}
   panelHighScore: {fileID: 1590174406}
   newHigh: {fileID: 1699145692}
@@ -451,6 +452,7 @@ GameObject:
   - component: {fileID: 321338302}
   - component: {fileID: 321338304}
   - component: {fileID: 321338303}
+  - component: {fileID: 321338305}
   m_Layer: 5
   m_Name: Medal
   m_TagString: Untagged
@@ -514,6 +516,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321338301}
   m_CullTransparentMesh: 0
+--- !u!114 &321338305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321338301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51b0d0b2dc63ef4ba0cb1c64636063e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalMedal: {fileID: 4697432953917863841, guid: fdece25a789e4994cbd49eee94a97496,
+    type: 3}
+  bronzeMedal: {fileID: 1783502025590196946, guid: fdece25a789e4994cbd49eee94a97496,
+    type: 3}
+  silverMedal: {fileID: 638348943666714384, guid: fdece25a789e4994cbd49eee94a97496,
+    type: 3}
+  goldMedal: {fileID: -7292882120162950949, guid: fdece25a789e4994cbd49eee94a97496,
+    type: 3}
 --- !u!1 &458732805
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 482543726}
   - component: {fileID: 482543727}
+  - component: {fileID: 482543728}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -793,6 +816,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &482543728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482543725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b1157d2a03de0147862245e798b691d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  medal: {fileID: 321338301}
 --- !u!1 &753213308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,7 +1576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 482543725}
-  score: {fileID: 235772898}
+  score: {fileID: 235772903}
   getReady: {fileID: 1645507289}
   pauseBtn: {fileID: 1875982840}
   blackFade: {fileID: 1350343981}
