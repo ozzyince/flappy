@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
     [SerializeField] GameObject medal;
+    [SerializeField] GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +22,6 @@ public class GameOver : MonoBehaviour
     void GameOverFinished()
     {
         medal.SetActive(true);
+        gameManager.DrawScore();
     }
 }

@@ -27,7 +27,7 @@ public class Score : MonoBehaviour
     {
         score = v;
         text.text = score.ToString();
-        panelScore.text = text.text;
+        //panelScore.text = text.text;
         if (score > highScore)
         {
             highScore = score;

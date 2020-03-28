@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject getReady;
     [SerializeField] GameObject pauseBtn;
     [SerializeField] Animator blackFade;
+    [SerializeField] Text panelScore;
+
+    int drawScore;
 
     private void Awake()
     {
@@ -60,6 +64,15 @@ public class GameManager : MonoBehaviour
     {
         //SceneManager.LoadScene("Menu");
         blackFade.SetTrigger("FadeIn");
+    }
+
+    public void DrawScore()
+    {
+        if (drawScore <= gameScore)
+        {
+            panelScore.text = drawScore++.ToString();
+            Invoke("DrawScore", 0.3f / Mathf.Sqrt(gameScore + 1 - drawScore));
+        }
     }
 
     public void GameHasStarted()
