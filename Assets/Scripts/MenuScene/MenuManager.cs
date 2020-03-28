@@ -23,5 +23,6 @@ public class MenuManager : MonoBehaviour
     {
         //SceneManager.LoadScene("Game");
         blackFade.SetTrigger("FadeIn");
+        AudioManager.audiomanager.Play("transition");
     }
 }

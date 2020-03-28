@@ -53,17 +53,20 @@ public class GameManager : MonoBehaviour
     void ActivateGameOver()
     {
         gameOverCanvas.SetActive(true);
+        AudioManager.audiomanager.Play("die");
     }
 
     public void OnOkBtnPressed()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        AudioManager.audiomanager.Play("transition");
     }
 
     public void OnMenuBtnPressed()
     {
         //SceneManager.LoadScene("Menu");
         blackFade.SetTrigger("FadeIn");
+        AudioManager.audiomanager.Play("transition");
     }
 
     public void DrawScore()

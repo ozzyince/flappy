@@ -42,6 +42,7 @@ public class Bird : MonoBehaviour
             body.velocity = new Vector2(0, speed);
             score = FindObjectOfType<Score>();
             getReady.SetTrigger("FadeOut");
+            AudioManager.audiomanager.Play("flap");
         }
         if (GameManager.gameHasStarted && !touchedGround)
         {
@@ -55,12 +56,16 @@ public class Bird : MonoBehaviour
     {
         if (GameManager.gameOver) return;
         if (collision.CompareTag("Column"))
+        {
+            AudioManager.audiomanager.Play("point");
             score.Scored();
+        }
         else if (collision.CompareTag("Pipe"))
         {
             hitEffect.SetTrigger("Hit");
             cameraAnim.SetTrigger("Shake");
             gameManager.GameOver();
+            AudioManager.audiomanager.Play("hit");
         }
     }
 
@@ -73,6 +78,7 @@ public class Bird : MonoBehaviour
                 cameraAnim.SetTrigger("Shake");
                 gameManager.GameOver();
                 GameOver();
+                AudioManager.audiomanager.Play("hit");
             }
             else
             {
