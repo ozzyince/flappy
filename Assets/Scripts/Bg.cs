@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bg : MonoBehaviour
 {
     [SerializeField] float speed;
-    float width = 1.44f;
+    float width = 1.43f;
 
     // Start is called before the first frame update
     void Start()
