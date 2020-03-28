@@ -25,4 +25,11 @@ public class MenuManager : MonoBehaviour
         blackFade.SetTrigger("FadeIn");
         AudioManager.audiomanager.Play("transition");
     }
+
+    public void OnRateBtnPressed()
+    {
+        #if UNITY_ANDROID
+            Application.OpenURL("market://details?id=com.quicat.flappy");
+        #endif
+    }
 }
